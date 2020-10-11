@@ -12,7 +12,7 @@ var MyMorpionXO = function MyMorpionXO(name){
 };
 
 MyMorpionXO.prototype.run = function() {
-	this.grid();
+	this.play();
 }
 
 MyMorpionXO.prototype.grid = function grid(){
@@ -25,7 +25,7 @@ MyMorpionXO.prototype.grid = function grid(){
 
     for(var j = 0; j<3; j++){
       var td = document.createElement('td');
-      td.textContent = ' ';
+      td.textContent = ' d';
       document.querySelector('table').appendChild(td);
     }
 
@@ -33,5 +33,29 @@ MyMorpionXO.prototype.grid = function grid(){
   }
 }
 
+MyMorpionXO.prototype.play = function play(){
+	this.grid();
+	var turn = 0;
+	var turnDisplay = document.createElement('p');
+	document.body.appendChild(turnDisplay);
+	if (turn%2 == 0){
+		turnDisplay.textContent = 'Place a O';
+	}else{
+		turnDisplay.textContent = 'Place a X';
+	}
+	var cells = document.querySelectorAll('td');
+	for (var i = 0; i<cells.length; i++){
+		cells[i].addEventListener('click', function(){
+			console.log(cells[i]);
+			if (turn%2 == 0){
+				console.log(cells[i]);
+				this.innerHTML = "O";
+			}else{
+				this.innerHTML = "X";
+			}
+			turn += 1;
+		});
+	}
+}
 var morpion = new MyMorpionXO('hamza');
 morpion.run();
