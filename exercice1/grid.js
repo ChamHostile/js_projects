@@ -1,20 +1,20 @@
 'use strict';
 
 /**Ex1
- * gridGenerator
- * @param {number} xAsis
- * @param {number} yAsis
- * @return 
+ * Grid
+ * @constructor {number} xAsis
+ * @constructor {number} yAsis
  */
-/*
-
-}*/
+/**/
 
 var Grid = function Grid(xAxis, yAxis) {
     this.xAxis = xAxis;
     this.yAxis = yAxis;
 }
 
+/**
+ *run
+ */
 Grid.prototype.run = function() {
   this.gridGenerator(this.xAxis, this.yAxis);
   var tdLength = document.querySelectorAll('td');
@@ -25,6 +25,11 @@ Grid.prototype.run = function() {
   }.bind(this), Math.floor(Math.random() * 1 + 1) * 1000);
 }
 
+/**
+ * gridGenerator
+* @param {number} xLength
+* @param {number} yLength
+*/
 Grid.prototype.gridGenerator = function gridGenerator(xLength,yLength){
   var grid = document.createElement('table');
 
@@ -48,6 +53,11 @@ Grid.prototype.gridGenerator = function gridGenerator(xLength,yLength){
 
   return this;
 }
+
+/**
+ * randColor
+* @param {number} cellNum
+*/
 Grid.prototype.randColor = function randColor(cellNum){
 
   var color = ['blue', 'green'];

@@ -1,20 +1,25 @@
 'use strict';
 
-/**Ex3
- * MyMorpionXO
- * @param {number} sum
- * @param {number} nbr
- * @return 
- */
 
+
+/**
+ * MyMorpionXO
+* @constructor {String} name
+*/
 var MyMorpionXO = function MyMorpionXO(name){
 	this.name = name;
 };
 
+/**
+ * run
+ */
 MyMorpionXO.prototype.run = function() {
 	this.play();
 }
 
+/**
+ * grid
+*/
 MyMorpionXO.prototype.grid = function grid(){
 	var gridTab = document.createElement('table');
 	gridTab.setAttribute('border', '1');
@@ -36,6 +41,9 @@ MyMorpionXO.prototype.grid = function grid(){
   }
 }
 
+/**
+ * play
+*/
 MyMorpionXO.prototype.play = function play(){
 	this.grid();
 	var turn = 0;
@@ -64,6 +72,9 @@ MyMorpionXO.prototype.play = function play(){
 	}
 }
 
+/**
+ * check
+*/
 MyMorpionXO.prototype.check = function check(){ // on va chercher a verifier si il y a N symboles identiques alignés
 	//ligne
 	var win = false;

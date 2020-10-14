@@ -7,16 +7,28 @@
  * @return 
  */
 
-
+/**
+ * MyMorpionXO
+* @constructor {number} sum
+* @constructor {number} nbr
+*/
 var DrawBar = function DrawBar(sum, nbr){
 	this.sum = sum;
 	this.nbr = nbr;
 }
 
+/**
+* run
+*/
 DrawBar.prototype.run = function(){
 	this.set(this.sum, this.nbr);
 }
 
+/**
+ * set
+* @param {number} barSum
+* @param {number} barNbr
+*/
 DrawBar.prototype.set = function setBar(barSum, barNbr){
 	var bar = document.createElement('progress');
 	bar.setAttribute('value', barNbr);

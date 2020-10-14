@@ -20,5 +20,17 @@ function renderWorldMap(){
   document.body.appendChild(obj);
   	}
 
+function svgHover(){
+	renderWorldMap();
+  var svgItem = document.querySelector('object');
+  svgItem.addEventListener("load", function(){
 
-renderWorldMap();
+  	var svgContent = svgItem.contentDocument;
+  	var svgPath = svgContent.getElementById('niger');
+		console.log(svgContent);
+
+  });
+
+}
+
+svgHover();

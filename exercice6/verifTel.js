@@ -3,6 +3,7 @@
 /**Ex6
  *checkPhoneNumber
  *@param {number} numTel  
+ *@return {bool} numTel;
  */
 
 

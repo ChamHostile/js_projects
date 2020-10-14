@@ -1,8 +1,9 @@
 'use strict';
 
-/**Ex7
+/**
  *computeNotes
- *@param {array} numTel  
+ *@param {array} noteArray
+ *@return {number} moyenne  
  */
 
 function computeNotes(noteArray){
@@ -22,3 +23,4 @@ function computeNotes(noteArray){
 var myArray = [10, 13, 13, 12, 15, 12, 11, 16, 14];
 var average = computeNotes(myArray);
 console.log(average);
+
